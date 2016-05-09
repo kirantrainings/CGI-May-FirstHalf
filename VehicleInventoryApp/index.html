@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"  ng-app="vehicleInventory">
+<head>
+    <meta charset="UTF-8">
+    <title>{{appTitle}}</title>
+    <link rel="stylesheet" href="content/css/bootstrap.css">
+    <link rel="stylesheet" href="content/css/bootstrap-theme.css">
+    <script src="vendor/jquery-1.12.3.min.js"></script>
+    <script src="vendor/bootstrap.min.js"></script>
+    <script src="vendor/angular.js"></script>
+</head>
+<body>
+<div class="container" ng-controller="mainCtrl">
+   <!--navbar-->
+    <div ng-include="navBarUrl"></div>
+    <!--content-->
+   <div ng-include="contentUrl"></div>
+    <!--foooter-->
+    <div ng-include="footerUrl"></div>
+</div>
+<!--register Module-->
+<script src="app/register/register.js"></script>
+<script src="app/register/registerCtrl.js"></script>
+<!--main module-->
+<script src="app/app.js"></script>
+<script src="app/common/mainCtrl.js"></script>
+<script src="app/common/lookupFact.js"></script>
+</body>
+</html>
