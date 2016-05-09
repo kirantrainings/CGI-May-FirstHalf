@@ -3,7 +3,8 @@
  */
 
 angular.module('vehicleInventory',
-    ['vehicleInventory.register']);
+    ['vehicleInventory.register',
+    'vehicleInventory.vehicles']);
 
 angular.module('vehicleInventory')
 .config(function(){

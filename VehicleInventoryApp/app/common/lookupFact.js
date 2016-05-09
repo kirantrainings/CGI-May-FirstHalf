@@ -19,7 +19,9 @@
                     {display:"Register",
                      templateUrl:'app/register/register.tpl.html'},
                     {display:"Login"
-                     ,templateUrl:'app/login/login.tpl.html'}
+                     ,templateUrl:'app/login/login.tpl.html'},
+                    {display:"New Vehicles"
+                        ,templateUrl:'app/vehicles/newVehicle.tpl.html'}
                     ];
             }
         };
