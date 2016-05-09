@@ -1,0 +1,29 @@
+<div ng-controller="vehicleCtrl">
+    <input type="text"
+           placeholder="search by make"
+           ng-model="searchMake">
+
+    <input type="text"
+           placeholder="search by model"
+           ng-model="searchModel">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <td>S.No</td>
+            <td>Make</td>
+            <td>Model</td>
+            <td>Year</td>
+            <td>Price</td>
+        </tr>
+        </thead>
+        <tr ng-repeat="vehicle in
+        oldVehicleData|orderBy :'-model'">
+            <td>{{$index+1}}</td>
+            <td>{{vehicle.make|uppercase}}</td>
+            <td>{{vehicle.model|lowercase}}</td>
+            <td>{{vehicle.year}}</td>
+            <td>{{vehicle.price|currency :"$"}}</td>
+        </tr>
+    </table>
+
+</div>

@@ -1,33 +1,47 @@
 /**
  * Created by Administrator on 5/9/2016.
  */
-(function(){
+(function () {
     'use strict';
-    var lookupFactFn= function(){
+    var lookupFactFn = function ($http) {
         return {
-            getGenderLookup:function(){
-                var genders =[{value:"M",name:"Male"},
-                    {value:"F",name:"Female"},
-                    {value:"N",name:"None"}];
+            getGenderLookup: function () {
+                var genders = [{value: "M", name: "Male"},
+                    {value: "F", name: "Female"},
+                    {value: "N", name: "None"}];
                 return genders;
             },
-            getNavigationTabs:function(){
-                return[
-                    {display:"Home",
-                     templateUrl:"app/home/home.tpl.html"
+            getNavigationTabs: function () {
+                return [
+                    {
+                        display: "Home",
+                        templateUrl: "app/home/home.tpl.html"
                     },
-                    {display:"Register",
-                     templateUrl:'app/register/register.tpl.html'},
-                    {display:"Login"
-                     ,templateUrl:'app/login/login.tpl.html'},
-                    {display:"New Vehicles"
-                        ,templateUrl:'app/vehicles/newVehicle.tpl.html'}
-                    ];
+                    {
+                        display: "Register",
+                        templateUrl: 'app/register/register.tpl.html'
+                    },
+                    {
+                        display: "Login"
+                        , templateUrl: 'app/login/login.tpl.html'
+                    },
+                    {
+                        display: "New Vehicles"
+                        , templateUrl: 'app/vehicles/newVehicle.tpl.html'
+                    },
+                    {
+                        display: "Old Vehicles"
+                        , templateUrl: 'app/vehicles/oldVehicle.tpl.html'
+                    }
+                ];
+            },
+            getNavigationTabsFromApi:function(){
+                return $http.get("app/data/navigation.json")
             }
         };
     };
     angular.module('vehicleInventory')
         .factory('lookupFact',
-            [lookupFactFn]);
+            ["$http",lookupFactFn]);
 
 })();

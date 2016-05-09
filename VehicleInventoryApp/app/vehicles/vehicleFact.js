@@ -7,6 +7,10 @@
       return{
           getNewVehicles:function(){
               return  $http.get('app/data/newVehicles.json');
+          },
+          //get Old Vehicles
+          getOldVehicles:function(){
+              return  $http.get('app/data/oldVehicles.json');
           }
       }  
     };

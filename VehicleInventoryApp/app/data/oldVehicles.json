@@ -1,0 +1,22 @@
+{
+  "vehicles": [
+    {
+      "year": "2015",
+      "make": "Audi",
+      "model": "A5",
+      "price":20000
+    },
+    {
+      "year": "2012",
+      "make": "Benz",
+      "model": "C2000",
+      "price":40000
+    },
+    {
+      "year": "2011",
+      "make": "CMW",
+      "model": "Beetel",
+      "price":60000
+    }
+  ]
+}

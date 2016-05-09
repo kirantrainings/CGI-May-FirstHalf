@@ -1,0 +1,24 @@
+{
+  "tabs": [
+    {
+      "display": "Home",
+      "templateUrl": "app/home/home.tpl.html"
+    },
+    {
+      "display": "Register",
+      "templateUrl": "app/register/register.tpl.html"
+    },
+    {
+      "display": "Login",
+      "templateUrl": "app/login/login.tpl.html"
+    },
+    {
+      "display": "New Vehicles",
+      " templateUrl": "app/vehicles/newVehicle.tpl.html"
+    },
+    {
+      "display": "Old Vehicles",
+      "templateUrl": "app/vehicles/oldVehicle.tpl.html"
+    }
+  ]
+}

@@ -4,15 +4,24 @@
 (function(){
     'use strict';
 
-    var vehicleCtrl=function($scope,vehicleFact){
+    var vehicleCtrl;
+    vehicleCtrl = function ($scope, vehicleFact) {
         console.log("Starting")
-        vehicleFact.getNewVehicles().success(function(response){
-              console.log("--Response--")
-              console.log(response);
-            $scope.vehicleData=response.vehicles;
-          }).error(function (response) {
-             console.log(response);
-          });
+        vehicleFact.getNewVehicles()
+            .success(function (response) {
+                console.log("--Response--")
+                console.log(response);
+                $scope.vehicleData = response.vehicles;
+            }).error(function (response) {
+            console.log(response);
+        });
+
+        vehicleFact.getOldVehicles().success(function (response) {
+            $scope.oldVehicleData = response.vehicles;
+        }).error(function (response) {
+
+        });
+
 
         console.log("Ending");
     };
