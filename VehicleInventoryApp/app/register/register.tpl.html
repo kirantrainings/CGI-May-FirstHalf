@@ -1,23 +1,49 @@
 <h1>Register</h1>
-<div ng-controller="registerCtrl">
+<form name="registerForm"
+      ng-controller="registerCtrl"
+      novalidate>
     <div class="form-horizontal" cgi-enter="register()">
-        <div class="form-group">
+        <div class="form-group"
+             ng-class="{ 'has-error': registerForm.firstName.$dirty
+                                  && registerForm.firstName.$invalid }">
             <label class="control-label col-xs-2">First Name</label>
             <div class="col-xs-4">
-                <input type="text" class="form-control"
+                <input type="text"
+                       class="form-control"
                        placeholder="First Name"
-                       ng-model="registerUser.firstName">
+                       ng-model="registerUser.firstName"
+                       name="firstName"
+                       required
+                       ng-minlength="4">
+                <div class="help-block" ng-show="registerForm.firstName.$dirty
+                && registerForm.firstName.$error.required">
+                    First Name Required
+                </div>
+                <span ng-show="registerForm.firstName.$error.minlength">Minimum length required is 4</span>
             </div>
 
         </div>
-        <div class="form-group">
+        <div class="form-group" ng-class="{'has-error':registerForm.lastName.$dirty
+        && registerForm.lastName.$invalid
+        }">
             <label class="control-label col-xs-2">Last Name</label>
             <div class="col-xs-4">
                 <input type="text" class="form-control"
                        placeholder="Last Name"
-                       ng-model="registerUser.lastName">
-            </div>
+                       name="lastName"
+                       ng-model="registerUser.lastName"
+                       ng-minlength="5"
+                       ng-maxlength="10"
+                       ng-required="true">
 
+            <div ng-show="registerForm.lastName.$dirty">
+                <div class="help-block" ng-show="registerForm.lastName.$error.required">Last Name Required</div>
+                <div  class="help-block" ng-show="registerForm.lastName.$error.minlength">Minimum Length required is 5</div>
+                <div  class="help-block" ng-show="registerForm.lastName.$error.maxlength">
+                    MaxLength Length required is 10
+                </div>
+            </div>
+            </div>
         </div>
         <div class="form-group">
             <label class="control-label col-xs-2">Phone Number</label>
@@ -30,7 +56,10 @@
             </div>
 
         </div>
-        <div class="form-group">
+        <div class="form-group"
+             ng-class="{'has-error':registerForm.email.$dirty
+        && registerForm.email.$invalid
+        }">
             <label class="control-label col-xs-2">Email</label>
             <div class="col-xs-4">
                 <input type="text"
@@ -38,7 +67,11 @@
                        placeholder="email"
                        ng-model="registerUser.email"
                        name="email"
-                      >
+
+                       cgi-check-user
+                >
+                <div class="help-block" ng-show="registerForm.email.$dirty
+                 && registerForm.email.$error.cgiCheckUser ">User Exists</div>
             </div>
 
         </div>
@@ -48,7 +81,7 @@
                 <input type="text" class="form-control"
                        placeholder="Age"
                        ng-model="registerUser.age"
-                       >
+                >
             </div>
 
         </div>
@@ -57,8 +90,8 @@
             <div class="col-xs-4">
                 <input type="text" class="form-control"
                        placeholder="DOB"
-                        cgi-date-picker
-                        maxdate="0"
+                       cgi-date-picker
+                       maxdate="0"
                        mindate="-4"
                        ng-model="registerUser.dob">
             </div>
@@ -73,11 +106,12 @@
                        ng-model="registerUser.gender"
                        value="{{gender.value}}">{{gender.name}}
                     </span>
-               <!-- <input type="radio"
-                       name="gender"
-                       ng-model="registerUser.gender"
-                       value="F">Femlae-->
-            </div>{{registerUser.gender}}
+                <!-- <input type="radio"
+                        name="gender"
+                        ng-model="registerUser.gender"
+                        value="F">Femlae-->
+            </div>
+            {{registerUser.gender}}
         </div>
         <div class="form-group">
             <label class="control-label col-xs-2">Country</label>
@@ -95,7 +129,8 @@
                 <label class="control-label col-xs-2"></label>
                 <div class="col-xs-4">
                     <button class="btn btn-primary"
-                            ng-click="register()">Register</button>
+                            ng-click="register()">Register
+                    </button>
                 </div>
             </div>
         </div>
@@ -104,12 +139,12 @@
                 <label class="control-label col-xs-2"></label>
                 <div class="col-xs-4">
                     <button class="btn btn-primary"
-                            cgi-click="register()">Register-CGI</button>
+                            cgi-click="register()">Register-CGI
+                    </button>
                 </div>
             </div>
         </div>
 
 
-
     </div>
-</div>
+</form>
