@@ -11,26 +11,31 @@
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script src="vendor/bootstrap.min.js"></script>
     <script src="vendor/angular.js"></script>
+    <script src="vendor/angular-ui-router.js"></script>
 </head>
 <body>
 <div class="container" ng-controller="mainCtrl">
    <!--navbar-->
     <!--<div ng-include="navBarUrl"></div>-->
-    <div cgi-nav-bar></div>
+    <!--<div cgi-nav-bar></div>-->
+    <div ng-include="'app/header/navbar.tpl.html'"></div>
+    <div ui-view></div>
     <!--content-->
-   <div ng-include="contentUrl"></div>
+   <!--<div ng-include="contentUrl"></div>-->
     <!--foooter-->
     <div ng-include="footerUrl"></div>
 </div>
 <script src="app/vehicles/vehicles.js"></script>
 <script src="app/vehicles/vehicleFact.js"></script>
 <script src="app/vehicles/vehicleCtrl.js"></script>
+
 <!--register Module-->
 <script src="app/register/register.js"></script>
 <script src="app/register/registerCtrl.js"></script>
 <script src="app/register/registerSvc.js"></script>
 <!--main module-->
 <script src="app/app.js"></script>
+<script src="app/home/homeCtrl.js"></script>
 <script src="app/common/mainCtrl.js"></script>
 <script src="app/common/lookupFact.js"></script>
 <script src="app/common/directives/cgiLogo.js"></script>

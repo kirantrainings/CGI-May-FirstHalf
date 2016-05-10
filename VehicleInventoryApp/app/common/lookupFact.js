@@ -15,7 +15,7 @@
                 return [
                     {
                         display: "Home",
-                        templateUrl: "app/home/home.tpl.html"
+                        templateUrl: "app/home/home.html"
                     },
                     {
                         display: "Register",
