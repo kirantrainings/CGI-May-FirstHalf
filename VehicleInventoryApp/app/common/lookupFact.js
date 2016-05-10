@@ -3,7 +3,7 @@
  */
 (function () {
     'use strict';
-    var lookupFactFn = function ($http) {
+    var lookupFactFn = function ($http,$q) {
         return {
             getGenderLookup: function () {
                 var genders = [{value: "M", name: "Male"},
@@ -36,12 +36,21 @@
                 ];
             },
             getNavigationTabsFromApi:function(){
-                return $http.get("app/data/navigation.json")
+                var dfd=$q.defer();
+                $http.get("app/data/navigation.json")
+                    .then(function(response){
+                       dfd.resolve(response.data)
+                    })
+                    .catch(function(response){
+                        dfd.reject("Error occurred");
+                    });
+                return dfd.promise;
+               // return $http.get("app/data/navigation.json")
             }
         };
     };
     angular.module('vehicleInventory')
         .factory('lookupFact',
-            ["$http",lookupFactFn]);
+            ["$http",'$q',lookupFactFn]);
 
 })();

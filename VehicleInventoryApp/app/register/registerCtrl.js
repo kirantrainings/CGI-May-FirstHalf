@@ -3,12 +3,12 @@
  */
 (function(){
     'use strict';
-    function  registerCtrlFn($scope,lookupFact) {
+    function  registerCtrlFn($scope,lookupFact,registerSvc) {
         $scope.registerUser={};
         $scope.genders=lookupFact.getGenderLookup();
 
         $scope.register=function(){
-            console.log( $scope.registerUser);
+            registerSvc.registerUser($scope.registerUser);
         }
     }
 
@@ -16,5 +16,7 @@
     angular.module('vehicleInventory.register')
         .controller('registerCtrl',
             ['$scope',
-                'lookupFact',registerCtrlFn])
+                'lookupFact',
+                'registerSvc',
+                registerCtrlFn])
 })();

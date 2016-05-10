@@ -6,10 +6,10 @@
        // $scope.tabs= lookupFact.getNavigationTabs();
 
         lookupFact.getNavigationTabsFromApi()
-            .success(function (response){
+            .then(function (response){
               $scope.tabs=response.tabs;
             })
-            .error(function (response){
+            .catch(function (response){
                 console.log(response);
             });
         $scope.loadContent=function(type){

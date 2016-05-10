@@ -8,11 +8,11 @@
     vehicleCtrl = function ($scope, vehicleFact) {
         console.log("Starting")
         vehicleFact.getNewVehicles()
-            .success(function (response) {
+            .then(function (response) {
                 console.log("--Response--")
                 console.log(response);
                 $scope.vehicleData = response.vehicles;
-            }).error(function (response) {
+            }).catch(function (response) {
             console.log(response);
         });
 

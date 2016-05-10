@@ -5,14 +5,18 @@
     <title>{{appTitle}}</title>
     <link rel="stylesheet" href="content/css/bootstrap.css">
     <link rel="stylesheet" href="content/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="vendor/jquery-1.12.3.min.js"></script>
+
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script src="vendor/bootstrap.min.js"></script>
     <script src="vendor/angular.js"></script>
 </head>
 <body>
 <div class="container" ng-controller="mainCtrl">
    <!--navbar-->
-    <div ng-include="navBarUrl"></div>
+    <!--<div ng-include="navBarUrl"></div>-->
+    <div cgi-nav-bar></div>
     <!--content-->
    <div ng-include="contentUrl"></div>
     <!--foooter-->
@@ -24,9 +28,16 @@
 <!--register Module-->
 <script src="app/register/register.js"></script>
 <script src="app/register/registerCtrl.js"></script>
+<script src="app/register/registerSvc.js"></script>
 <!--main module-->
 <script src="app/app.js"></script>
 <script src="app/common/mainCtrl.js"></script>
 <script src="app/common/lookupFact.js"></script>
+<script src="app/common/directives/cgiLogo.js"></script>
+<script src="app/common/directives/cgiNavBar.js"></script>
+<script src="app/common/directives/cgiNumberOnly.js"></script>
+<script src="app/common/directives/cgiClick.js"></script>
+<script src="app/common/directives/cgiEnter.js"></script>
+<script src="app/common/directives/cgiDatePicker.js"></script>
 </body>
 </html>
