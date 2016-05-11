@@ -12,7 +12,7 @@
            // $state.go('home',{userDataerx:$scope.registerUser});
         };
         
-        
+        $scope.countries=lookupFact.getCountries();
         
         
         $scope.$watch('fullName',function(newVal,oldVal){

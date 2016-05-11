@@ -6,13 +6,18 @@
             <td>Make</td>
             <td>Model</td>
             <td>Year</td>
+            <td>Price</td>
         </tr>
         </thead>
-        <tr ng-repeat="vehicle in vehicleData">
+        <tr ng-repeat="vehicle in vehicleData track by $index">
             <td>{{$index}}</td>
-            <td>{{vehicle.make}}</td>
-            <td>{{vehicle.model}}</td>
-            <td>{{vehicle.year}}</td>
+            <td>{{::vehicle.make}}</td>
+            <td>{{::vehicle.model}}</td>
+            <td>{{::vehicle.year}}</td>
+            <td>{{::vehicle.price}}</td>
+            <td><input type="checkbox"
+                       ng-model="vehicle.isSelected"
+            ng-click="vehicleCheck(vehicle)"></td>
         </tr>
     </table>
 

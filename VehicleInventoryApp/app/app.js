@@ -30,9 +30,15 @@ angular.module('vehicleInventory')
             templateUrl:"app/register/register.tpl.html",
             controller:'registerCtrl'
         };
+        var vehicles={
+            url:'/vehicles',
+            templateUrl:"app/vehicles/newVehicle.tpl.html",
+            controller:'vehicleCtrl'
+        };
         
         $stateProvider.state('home',home);
         $stateProvider.state('login',login);
         $stateProvider.state('register',register);
+        $stateProvider.state('vehicles',vehicles);
 
 }]);

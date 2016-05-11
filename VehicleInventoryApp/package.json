@@ -1,0 +1,19 @@
+{
+  "name": "gulp-demo",
+  "version": "1.0.0",
+  "description": "this demo will explain how to the the gulp in the applications",
+  "main": "main.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "kiran.paturi",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^4.0.0",
+    "gulp-jshint": "^2.0.0",
+    "gulp-uglify": "^1.5.3",
+    "jshint": "^2.9.2"
+  }
+}

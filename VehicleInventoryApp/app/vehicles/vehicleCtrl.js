@@ -5,7 +5,7 @@
     'use strict';
 
     var vehicleCtrl;
-    vehicleCtrl = function ($scope, vehicleFact) {
+    vehicleCtrl = function ($scope, vehicleFact,$rootScope) {
         console.log("Starting")
         vehicleFact.getNewVehicles()
             .then(function (response) {
@@ -22,6 +22,15 @@
 
         });
 
+        $scope.vehicleCheck= function(item){
+            if(item.isSelected){
+                $rootScope.$broadcast('VEHICLE_SELECTED_FOR_CHECKOUT',{data:item})
+            }
+            else{
+                $rootScope.$broadcast('VEHICLE_REMOVED_FROM_CHECKOUT',{data:item});
+            }
+        }
+
 
         console.log("Ending");
     };
@@ -29,5 +38,6 @@
         .controller('vehicleCtrl',
             ['$scope',
             'vehicleFact',
+                '$rootScope',
             vehicleCtrl])
 })();

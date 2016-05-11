@@ -117,10 +117,10 @@
             <div class="col-xs-4">
                 <select class="form-control"
                         ng-model="selectedCountry"
-                        ng-options="country.name
-                        for country in countries">
+                        ng-options="country.name group by country.continent for country in countries">
                     <option value="">Please Select</option>
                 </select>
+                {{selectedCountry}}
             </div>
         </div>
         <div class="form-group">

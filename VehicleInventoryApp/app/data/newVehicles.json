@@ -3,17 +3,20 @@
     {
       "year": "2016",
       "make": "Audi",
-      "model": "A5"
+      "model": "A5",
+      "price":20000
     },
     {
       "year": "2014",
       "make": "Benz",
-      "model": "C2000"
+      "model": "C2000",
+      "price": 40000
     },
     {
       "year": "2015",
       "make": "BMW",
-      "model": "Beetel"
+      "model": "Beetel",
+      "price": 50000
     }
   ]
 }
